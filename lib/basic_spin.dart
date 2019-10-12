@@ -20,14 +20,6 @@ class Basic extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // RotationTransition(
-            //   turns: new AlwaysStoppedAnimation(180 / 360),
-            //   child: Container(
-            //     padding: EdgeInsets.all(8.0),
-            //     width: 50,
-            //     child: Image.asset('assets/images/arrow.png'),
-            //   ),
-            // ),
             SpinningWheel(
               Image.asset('assets/images/arrow_spin.png'),
               //default 310
@@ -39,11 +31,6 @@ class Basic extends StatelessWidget {
               onUpdate: _dividerController.add,
               onEnd: _dividerController.add,
             ),
-            StreamBuilder(
-              stream: _dividerController.stream,
-              builder: (context, snapshot) =>
-                  snapshot.hasData ? BasicScore(snapshot.data) : Container(),
-            )
           ],
         ),
       ),
@@ -51,25 +38,4 @@ class Basic extends StatelessWidget {
   }
 
   double _generateRandomAngle() => Random().nextDouble() * pi * 2;
-}
-
-class BasicScore extends StatelessWidget {
-  final int selected;
-
-  final Map<int, String> labels = {
-    1: '紫',
-    2: '赤紫',
-    3: '赤',
-    4: 'ダークオレンジ',
-    5: 'ライトオレンジ',
-    6: '黄色',
-  };
-
-  BasicScore(this.selected);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('${labels[selected]}',
-        style: TextStyle(fontStyle: FontStyle.italic));
-  }
 }
