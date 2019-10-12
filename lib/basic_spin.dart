@@ -20,10 +20,19 @@ class Basic extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // RotationTransition(
+            //   turns: new AlwaysStoppedAnimation(180 / 360),
+            //   child: Container(
+            //     padding: EdgeInsets.all(8.0),
+            //     width: 50,
+            //     child: Image.asset('assets/images/arrow.png'),
+            //   ),
+            // ),
             SpinningWheel(
-              Image.asset('assets/images/wheel-6-300.png'),
-              width: 310,
-              height: 310,
+              Image.asset('assets/images/arrow_spin.png'),
+              //default 310
+              width: 370,
+              height: 370,
               initialSpinAngle: _generateRandomAngle(),
               spinResistance: 0.2,
               dividers: 6,

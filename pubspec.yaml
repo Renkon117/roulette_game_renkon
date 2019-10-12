@@ -46,6 +46,8 @@ flutter:
   assets:
     - assets/images/wheel-6-300.png
     - assets/images/roulette-8-300.png
+    - assets/images/arrow.png
+    - assets/images/arrow_spin.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

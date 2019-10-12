@@ -23,10 +23,18 @@ class Roulette extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Icon(
+                  IconData(58843, fontFamily: 'MaterialIcons'),
+                ),
+              ),
+            ),
             SpinningWheel(
               Image.asset('assets/images/roulette-8-300.png'),
-              width: 310,
-              height: 310,
+              width: 360,
+              height: 360,
               initialSpinAngle: _generateRandomAngle(),
               spinResistance: 0.6,
               canInteractWhileSpinning: false,
